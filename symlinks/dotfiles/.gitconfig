@@ -1,10 +1,11 @@
+# add name, email, and under core: MyUsername
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
 [user]
-	name = Dylan Vann
-	email = dylan.vann@gmail.com
+	name = name lastname
+	email = emailtouse@email.com
 [alias]
 	co = checkout
 	br = branch
@@ -14,12 +15,4 @@
 	permission-reset = !git diff -p -R | grep -E \"^(diff|(old|new) mode)\" | git apply
 	reset-to-remote = "! git clean -d -f && git fetch origin && git checkout master && git reset --hard origin/master"
 [core]
-	excludesfile = /Users/dylanvann/.gitignore_global
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /opt/homebrew-cask/Caskroom/sourcetree/2.0.5.5/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
-[credential]
-	helper = osxkeychain
+	excludesfile = /Users/MyUsername/.gitignore_global
