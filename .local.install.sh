@@ -1,11 +1,9 @@
-!!python/unicode 'casks':
-- !!python/unicode 'adobe-creative-cloud'
-- !!python/unicode 'appcode'
-- !!python/unicode 'atom'
-- !!python/unicode 'cyberduck'
-- !!python/unicode 'filezilla'
+#!/bin/sh
+apt-get update  # To get the latest package lists
+apt-get install  -y
+
 - !!python/unicode 'flux'
-- !!python/unicode 'github-desktop'
+
 - !!python/unicode 'google-chrome'
 - !!python/unicode 'harvest'
 - !!python/unicode 'intellij-idea'
