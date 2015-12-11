@@ -1,9 +1,13 @@
 #!/bin/sh
+
+# variable used to store actions to take after install script is done
+remindVar="reminders:"
 apt-get update  # To get the latest package lists
 
 # install redshift (alternative to flux), turns screen to reddish at night (eases strain on eyes)
-gtk-redshift -l 43:-79 #setup for toronto, for new lat:long http://itouchmap.com/latlong.html
-
+apt-get install redshift redshift-gtk -y
+nohup gtk-redshift -l 43:-79 # setup for toronto, autorun in background using nohup, for new lat:long http://itouchmap.com/latlong.html
+remindVar="$remindVar\n click redshift and add autostart functionality"
 
 add-apt-repository ppa:kilian/f.lux
 apt-get update  # Flux requires update
@@ -31,13 +35,14 @@ apt-get install --reinstall gtk2-engines
 cp /usr/share/applications/guake.desktop /etc/xdg/autostart/ # allow guake to auto-start on login
 
 # reminders for actions to take after install script is done
-echo setup launcher-panel: notepad++, chrome, cmd, gitter,
-echo click redshift and add autostart functionality
+remindVar setup launcher-panel: notepad++, chrome, cmd, gitter,
+
 echo google chrome, login for extensions
 echo install lastpass
 echo setup flux from fluxgui, run fluxgui
 echo get webstorm, install vim plugin
 
+printf "$remindVar\n"
 
 - !!python/unicode 'cscope'
 - !!python/unicode 'ctags'
