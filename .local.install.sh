@@ -1,81 +1,27 @@
 #!/bin/sh
 apt-get update  # To get the latest package lists
-apt-get install  -y
 
-- !!python/unicode 'flux'
+# install flux, turns screen to reddish at night (eases strain on eyes)
+add-apt-repository ppa:kilian/f.lux
+apt-get update  # Flux requires update
+apt-get install fluxgui
 
-- !!python/unicode 'google-chrome'
-- !!python/unicode 'harvest'
-- !!python/unicode 'intellij-idea'
-- !!python/unicode 'iterm2'
-- !!python/unicode 'java6'
-- !!python/unicode 'lastpass'
-- !!python/unicode 'macs-fan-control'
-- !!python/unicode 'mamp'
-- !!python/unicode 'mplayerx'
-- !!python/unicode 'phpstorm'
-- !!python/unicode 'rubymine'
-- !!python/unicode 'shiftit'
-- !!python/unicode 'skyfonts'
-- !!python/unicode 'sourcetree'
-- !!python/unicode 'transmission'
-- !!python/unicode 'vagrant'
-- !!python/unicode 'virtualbox'
-!!python/unicode 'formulas':
-- !!python/unicode 'autoconf'
-- !!python/unicode 'brew-cask'
-- !!python/unicode 'coreutils'
+
+# reminders for actions to take after install script is done
+echo google chrome, login for extensions
+echo install lastpass
+echo setup flux from fluxgui, run fluxgui
+echo get webstorm, install vim plugin
+
 - !!python/unicode 'cscope'
 - !!python/unicode 'ctags'
-- !!python/unicode 'docker'
-- !!python/unicode 'emacs'
-- !!python/unicode 'ffmpeg'
-- !!python/unicode 'findutils'
-- !!python/unicode 'freetype'
-- !!python/unicode 'gdbm'
+
 - !!python/unicode 'git'
-- !!python/unicode 'heroku-toolbelt'
-- !!python/unicode 'hub'
-- !!python/unicode 'imagemagick'
-- !!python/unicode 'jenv'
-- !!python/unicode 'jpeg'
-- !!python/unicode 'lame'
-- !!python/unicode 'libevent'
-- !!python/unicode 'libpng'
-- !!python/unicode 'libtiff'
-- !!python/unicode 'libtool'
-- !!python/unicode 'libvo-aacenc'
-- !!python/unicode 'libyaml'
-- !!python/unicode 'lua'
-- !!python/unicode 'macvim'
 - !!python/unicode 'node'
-- !!python/unicode 'openssl'
-- !!python/unicode 'pcre'
-- !!python/unicode 'pkg-config'
-- !!python/unicode 'postgresql'
 - !!python/unicode 'python'
-- !!python/unicode 'qt'
-- !!python/unicode 'rbenv'
-- !!python/unicode 'rcm'
-- !!python/unicode 'readline'
-- !!python/unicode 'reattach-to-user-namespace'
-- !!python/unicode 'redis'
-- !!python/unicode 'ruby-build'
-- !!python/unicode 'sqlite'
-- !!python/unicode 'the_silver_searcher'
+'ruby'
 - !!python/unicode 'tmux'
 - !!python/unicode 'vim'
-- !!python/unicode 'vv'
-- !!python/unicode 'x264'
-- !!python/unicode 'xvid'
-- !!python/unicode 'xz'
-- !!python/unicode 'zlib'
 - !!python/unicode 'zsh'
-- !!python/unicode 'zsh-completions'
-!!python/unicode 'symlinks':
+
     !!python/unicode 'dotfiles/.*': '~'
-!!python/unicode 'taps':
-- !!python/unicode 'caskroom/cask'
-- !!python/unicode 'caskroom/versions'
-- !!python/unicode 'homebrew/bundle'
-- !!python/unicode 'thoughtbot/formulae'
