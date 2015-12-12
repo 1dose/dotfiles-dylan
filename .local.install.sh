@@ -4,25 +4,32 @@
 remindVar="reminders:"
 apt-get update  # To get the latest package lists
 
-# install redshift (alternative to flux), turns screen to reddish at night (eases strain on eyes)
+# GNOME, GUI for 
+apt-get install gnome-session-fallback -y
+remindVar="$remindVar\n gnome: install a theme. I use XGnome enhanced, remember to set gnome as default when you login"
+
+# htop 
+apt-get install htop -y
+
+# redshift (alternative to flux), turns screen to reddish at night (eases strain on eyes)
 apt-get install redshift redshift-gtk -y
 nohup gtk-redshift -l 43:-79 # setup for toronto, autorun in background using nohup, for new lat:long http://itouchmap.com/latlong.html
 remindVar="$remindVar\n click redshift and add autostart functionality"
 
-# install notepad++, text editor for notes (good autosave on crash feature)
+# notepad++, text editor for notes (good autosave on crash feature)
 add-apt-repository ppa:notepadqq-team/notepadqq -y
 apt-get update
 apt-get install notepadqq -y
 
-# install tmux, splitting terminal horizontally/vertically
+# tmux, splitting terminal horizontally/vertically
 apt-get install tmux -y
 
-# install gitter messaging up for developers, allows you to copy-paste code with syntax highlighting
+# gitter messaging up for developers, allows you to copy-paste code with syntax highlighting
 apt-add-repository ppa:gurqn/systray-trusty -y
 apt-get update
 apt-get upgrade
 
-# install gimp, paint/photoshop for ubuntu
+# gimp, paint/photoshop for ubuntu
 apt-get gimp
 
 # reminders for actions to take after install script is done
