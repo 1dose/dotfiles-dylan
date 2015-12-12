@@ -9,38 +9,38 @@ apt-get install redshift redshift-gtk -y
 nohup gtk-redshift -l 43:-79 # setup for toronto, autorun in background using nohup, for new lat:long http://itouchmap.com/latlong.html
 remindVar="$remindVar\n click redshift and add autostart functionality"
 
-add-apt-repository ppa:kilian/f.lux
-apt-get update  # Flux requires update
-apt-get install fluxgui
-
 # install notepad++, text editor for notes (good autosave on crash feature)
-add-apt-repository ppa:notepadqq-team/notepadqq
+add-apt-repository ppa:notepadqq-team/notepadqq -y
 apt-get update
-apt-get install notepadqq
+apt-get install notepadqq -y
 
-# install guake, desktop environment for moving windows around the screen and acessing terminal quickly
-apt-get install guake
+# install tmux, splitting terminal horizontally/vertically
+apt-get install tmux -y
 
-# fix schema error found on ubuntu 14.4 - guake
-mkdir /etc/gconf/schemas
-cd /etc/gconf/schemas/
-ln -s /usr/share/gconf/schemas/guake.schemas
-# fix warning found on ubuntu 14.4 - guake
-apt-get install --reinstall gtk2-engines
+# install gitter messaging up for developers, allows you to copy-paste code with syntax highlighting
+apt-add-repository ppa:gurqn/systray-trusty -y
+apt-get update
+apt-get upgrade
 
-
-
-
-
-cp /usr/share/applications/guake.desktop /etc/xdg/autostart/ # allow guake to auto-start on login
+# install gimp, paint/photoshop for ubuntu
+apt-get gimp
 
 # reminders for actions to take after install script is done
-remindVar setup launcher-panel: notepad++, chrome, cmd, gitter,
+remindVar="$remindVar\n setup launcher-panel: notepad++, chrome, cmd, gitter"
 
-echo google chrome, login for extensions
-echo install lastpass
-echo setup flux from fluxgui, run fluxgui
-echo get webstorm, install vim plugin
+remindVar="$remindVar\n google chrome, login for extensions"
+
+# password management system
+remindVar="$remindVar\n install lastpass"
+
+# javascript IDE
+remindVar="$remindVar\n get webstorm (see this shellscript file for instruction on JDK installation first, install vim plugin"
+# install JDK for webstorm to work
+#sudo add-apt-repository ppa:webupd8team/java
+#sudo apt-get update
+#sudo mkdir -p /usr/lib/mozilla/plugins #just in case, this will be added to the package in the next version
+#sudo apt-get install oracle-jdk7-installer 
+# also get webstorm, unpack, extract to a folder, then link webstorm/bin/webstorm.sh to bin
 
 printf "$remindVar\n"
 
