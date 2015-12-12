@@ -8,6 +8,10 @@ apt-get update  # To get the latest package lists
 apt-get install gnome-session-fallback -y
 remindVar="$remindVar\n gnome: install a theme. I use XGnome enhanced, remember to set gnome as default when you login"
 
+# gdm, display manager works well with GNOME, allows to set default gnome as GUI shell
+apt-get install gdm -y
+remindVar="$remindVar\n gdm: run command 'sudo dpkg-reconfigure gdm' and select gnome as default"
+
 # htop 
 apt-get install htop -y
 
@@ -32,10 +36,20 @@ apt-get upgrade
 # gimp, paint/photoshop for ubuntu
 apt-get gimp
 
+# git version control
+apt-get install git
+
+# nodejs, npm, and then link them to bin. Used to develop node apps
+apt-get install nodejs
+apt-get install npm
+ln -s /usr/bin/nodejs /usr/bin/node
+
 # reminders for actions to take after install script is done
 remindVar="$remindVar\n setup launcher-panel: notepad++, chrome, cmd, gitter"
 
 remindVar="$remindVar\n google chrome, login for extensions"
+
+remindVar="$remindVar\n check if python is installed (was pre-installed on ubuntu 14.4)"
 
 # password management system
 remindVar="$remindVar\n install lastpass"
@@ -51,14 +65,8 @@ remindVar="$remindVar\n get webstorm (see this shellscript file for instruction 
 
 printf "$remindVar\n"
 
-- !!python/unicode 'cscope'
-- !!python/unicode 'ctags'
-
-- !!python/unicode 'git'
-- !!python/unicode 'node'
 - !!python/unicode 'python'
-'ruby'
-- !!python/unicode 'tmux'
+
 - !!python/unicode 'vim'
 - !!python/unicode 'zsh'
 
