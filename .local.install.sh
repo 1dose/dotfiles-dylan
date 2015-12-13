@@ -15,6 +15,9 @@ remindVar="$remindVar\n gdm: run command 'sudo dpkg-reconfigure gdm' and select 
 # htop 
 apt-get install htop -y
 
+# un-rar files
+apt-get install unrar
+
 # redshift (alternative to flux), turns screen to reddish at night (eases strain on eyes)
 apt-get install redshift redshift-gtk -y
 nohup gtk-redshift -l 43:-79 # setup for toronto, autorun in background using nohup, for new lat:long http://itouchmap.com/latlong.html
