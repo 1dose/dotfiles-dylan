@@ -56,6 +56,11 @@ remindVar="$remindVar\n install lastpass"
 
 # javascript IDE
 remindVar="$remindVar\n get webstorm (see this shellscript file for instruction on JDK installation first, install vim plugin"
+
+# get anki, powerful memorization software
+remindVar="$remindVar\n download and install anki"
+
+
 # install JDK for webstorm to work
 #sudo add-apt-repository ppa:webupd8team/java
 #sudo apt-get update
