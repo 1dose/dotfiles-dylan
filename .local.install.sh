@@ -29,9 +29,10 @@ apt-get install notepadqq -y
 apt-get install tmux -y
 
 # gitter messaging up for developers, allows you to copy-paste code with syntax highlighting
-apt-add-repository ppa:gurqn/systray-trusty -y
-apt-get update
-apt-get upgrade
+remindVar="$remindVar\n gitter for messaging"
+#apt-add-repository ppa:gurqn/systray-trusty -y
+#apt-get update
+#apt-get upgrade
 
 # gimp, paint/photoshop for ubuntu
 apt-get gimp
